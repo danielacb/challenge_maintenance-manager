@@ -4,8 +4,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 import { AssetsPage, ErrorPage, UnitsPage, UsersPage } from "./pages";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-react";
 
 import "antd/dist/reset.css";
+import Login from "./pages/Login";
+
+const frontendApi = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,13 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey={frontendApi}>
+      <SignedIn>
+        <RouterProvider router={router} />
+      </SignedIn>
+      <SignedOut>
+        <Login />
+      </SignedOut>
+    </ClerkProvider>
   </React.StrictMode>
 );
