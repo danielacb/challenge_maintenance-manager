@@ -39,7 +39,7 @@ interface WorkordersProps {
 }
 
 interface HealthHistoryProps {
-  status: string;
+  status: AssetStatusProps;
   timestamp: string;
 }
 
@@ -67,4 +67,5 @@ type AssetStatusProps =
   | "inAlert"
   | "inOperation"
   | "inDowntime"
+  | "plannedStop"
   | "unplannedStop";

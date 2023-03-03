@@ -10,8 +10,8 @@ type Props = {
 export default function AssetStatus({ status, type }: Props) {
   function getColor(): PresetStatusColorType {
     if (status === "inAlert" || status === "unplannedStop") return "error";
+    if (status === "inDowntime" || status === "plannedStop") return "warning";
     if (status === "inOperation") return "processing";
-    if (status === "inDowntime") return "warning";
     return "default";
   }
   const color = getColor();
@@ -21,6 +21,7 @@ export default function AssetStatus({ status, type }: Props) {
     inOperation: "In Operation",
     inDowntime: "In Downtime",
     unplannedStop: "Unplanned Stop",
+    plannedStop: "Planned Stop",
   };
   const text = texts[status];
 
