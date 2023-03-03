@@ -44,8 +44,8 @@ export default function AssetPage() {
           <Breadcrumb.Item>{data.name}</Breadcrumb.Item>
         </Breadcrumb>
         <Row style={{ marginTop: 16 }} gutter={[16, 16]}>
-          <Col span={8}>
-            <Space>
+          <Col xs={{ span: 24 }} xl={{ span: 8 }}>
+            <Space style={{ marginBottom: 16 }}>
               <Tooltip title="health score">
                 <HealthScoreBadge score={data.healthscore} type="ribbon">
                   <Image
@@ -57,7 +57,7 @@ export default function AssetPage() {
               </Tooltip>
             </Space>
           </Col>
-          <Col span={16}>
+          <Col xs={{ span: 24 }} xl={{ span: 16 }}>
             <Space align="start">
               <Typography.Title>{data?.name}</Typography.Title>
               {data && <AssetStatus status={data.status} type="tag" />}

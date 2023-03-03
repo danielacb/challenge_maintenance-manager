@@ -36,9 +36,14 @@ export default function UsersPage() {
     return (
       <>
         <Typography.Title>Users</Typography.Title>
-        <Row gutter={16}>
+        <Row gutter={[16, 16]}>
           {Array.from({ length: 4 }, (_, index) => (
-            <Col key={index} span={6}>
+            <Col
+              key={index}
+              xs={{ span: 24 }}
+              md={{ span: 12 }}
+              xl={{ span: 6 }}
+            >
               <Card
                 actions={[
                   <Skeleton.Button key="1" />,
@@ -71,7 +76,12 @@ export default function UsersPage() {
       <Row gutter={[16, 16]}>
         {data && data.length > 0 ? (
           data?.map((user) => (
-            <Col key={user.id} span={6}>
+            <Col
+              key={user.id}
+              xs={{ span: 24 }}
+              md={{ span: 12 }}
+              xl={{ span: 6 }}
+            >
               <Card
                 actions={[
                   <Button key="edit" type="text">
