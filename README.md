@@ -12,7 +12,11 @@ npm install
 npm run dev
 ```
 
-## Signing in
+### CORS proxy configuration
+
+[Cors.sh](https://cors.sh/) was used as a proxy to avoid CORS issues. Generate an API key and update the `.env` file, taking `.env-example` as a reference, to work on the project locally.
+
+### Signing in
 
 [Clerk](https://clerk.dev/) was used as a way to mock an authentication process. All the information from the [API](https://my-json-server.typicode.com/tractian/fake-api/users/) was copied to keep the data consistent.
 
