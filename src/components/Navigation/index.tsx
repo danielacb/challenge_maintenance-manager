@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useClerk, useUser } from "@clerk/clerk-react";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import { useQuery } from "@tanstack/react-query";
 import {
   Avatar,
   Button,
@@ -14,8 +15,9 @@ import {
   Typography,
 } from "antd";
 
-import { menuItems } from "./menuItems";
 import Logo from "/logo-tractian.svg";
+import { getMenuItems } from "./menuItems";
+import { getCompanyById } from "../../api/fake-api";
 
 type Props = {
   children: React.ReactNode;
@@ -32,6 +34,14 @@ export default function Navigation({ children }: Props) {
 
   const { user } = useUser();
   const username = user?.publicMetadata.name || "";
+  const companyId = user?.publicMetadata.companyId;
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["getCompanyById", companyId],
+    queryFn: () => getCompanyById(Number(companyId)),
+  });
+
+  const companyName = data?.name || "";
 
   return (
     <Layout>
@@ -89,7 +99,7 @@ export default function Navigation({ children }: Props) {
             defaultSelectedKeys={["company", pathname]}
             defaultOpenKeys={["company"]}
             style={{ height: "100%", borderRight: 0 }}
-            items={menuItems}
+            items={getMenuItems(companyName, isLoading)}
           />
         </Sider>
 

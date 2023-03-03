@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         element: <AssetsPage />,
       },
       {
+        path: "assets/:id",
+        element: <AssetPage />,
+      },
+      {
         path: "units",
         element: <UnitsPage />,
       },
