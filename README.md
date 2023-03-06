@@ -1,6 +1,11 @@
 # Maintenance Manager
 
-Maintenance Manager using React, Typescript and Ant Design
+![GitHub deployments](https://img.shields.io/github/deployments/danielacb/challenge_maintenance-manager/production?label=vercel&logo=vercel&logoColor=white)
+
+Preview project [here!](https://dcb-maintenance-manager.vercel.app/)
+
+<a href="https://dcb-maintenance-manager.vercel.app/"><img src="https://user-images.githubusercontent.com/18037904/223151770-53b8fddc-ea79-4acb-adbb-0e20d55978a8.png" alt="Maintenance Manager" width="800" /></a>
+Maintenance Manager using React, Typescript and Ant Design!
 
 ## Running the development server:
 
@@ -36,9 +41,9 @@ XXN2hDFcbc3ly5UnN
 
 To run the project locally, follow these steps:
 
-- Create a new [Clerk](https://clerk.dev/) account;
-- Create a new application;
-- Create a new user with this public metadata values:
+-   Create a new [Clerk](https://clerk.dev/) account;
+-   Create a new application;
+-   Create a new user with this public metadata values:
 
 ```
 {
@@ -50,5 +55,5 @@ To run the project locally, follow these steps:
 }
 ```
 
-- On the `.env` file, paste your publishable [API key](https://dashboard.clerk.dev/last-active?path=api-keys) as the value of `VITE_CLERK_PUBLISHABLE_KEY`;
-- Finally, you should be able to log in with the email `testerOne@tractian.com` and the password you defined when creating the user.
+-   On the `.env` file, paste your publishable [API key](https://dashboard.clerk.dev/last-active?path=api-keys) as the value of `VITE_CLERK_PUBLISHABLE_KEY`;
+-   Finally, you should be able to log in with the email `testerOne@tractian.com` and the password you defined when creating the user.
